@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { SellerService } from '../service/seller.service';
 import { Router } from '@angular/router';
-import { Signup } from '../data-type';
+import { LogIn, Signup } from '../data-type';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -27,7 +27,7 @@ export class SellerAuthComponent implements OnInit {
     this.showLogin = !this.showLogin ;
   }
 
-  logIn(data: Signup){
-    console.log(data);
+  logIn(data: LogIn){
+    this.sellerService.userLogin(data);
   }
 }

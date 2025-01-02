@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Signup } from '../data-type';
+import { LogIn, Signup } from '../data-type';
 import { BehaviorSubject } from 'rxjs';
 import { Router } from '@angular/router';
 
@@ -25,5 +25,18 @@ export class SellerService {
       this.isSellerLoggedIn.next(true);
       this.router.navigate(['seller-home']);
     }
+  }
+
+  userLogin(data: LogIn) {
+    this.http.get(`http://localhost:3000/seller?email=${data.email}&password=${data.password}`, { observe: 'response' }).subscribe((result:any) => {
+      if(result && result.body && result.body.length){
+        console.log("User logged In");
+        localStorage.setItem('seller',JSON.stringify(result.body))
+        this.router.navigate(['seller-home'])
+      }
+      else{
+        console.log('Login falied')
+      }
+    });
   }
 }
