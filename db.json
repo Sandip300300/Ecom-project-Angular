@@ -1,0 +1,34 @@
+{
+  "seller": [
+    {
+      "name": "Sandip Mistry",
+      "email": "Sandip@gmail.com",
+      "password": "abc",
+      "id": 1
+    },
+    {
+      "name": "Sam",
+      "email": "Sam@gmail.com",
+      "password": "abc",
+      "id": 2
+    },
+    {
+      "name": "Sajal",
+      "password": "C4teamtest",
+      "email": "090250",
+      "id": 3
+    },
+    {
+      "name": "Sajal 2",
+      "password": "C4teamtest",
+      "email": "090250",
+      "id": 4
+    },
+    {
+      "name": "new Name",
+      "password": "C4teamtest",
+      "email": "090250",
+      "id": 5
+    }
+  ]
+}
