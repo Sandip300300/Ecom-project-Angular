@@ -3,14 +3,16 @@ import { FormsModule } from '@angular/forms';
 import { SellerService } from '../service/seller.service';
 import { Router } from '@angular/router';
 import { Signup } from '../data-type';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-seller-auth',
-  imports: [FormsModule],
+  imports: [FormsModule,CommonModule],
   templateUrl: './seller-auth.component.html',
   styleUrl: './seller-auth.component.css'
 })
 export class SellerAuthComponent implements OnInit {
+  showLogin = false;
 
   constructor(private sellerService: SellerService, private router: Router) { }
   ngOnInit(): void {
@@ -19,5 +21,13 @@ export class SellerAuthComponent implements OnInit {
 
   signUp(data: Signup): void {
     this.sellerService.userSignUp(data);
+  }
+
+  openLogin() {
+    this.showLogin = !this.showLogin ;
+  }
+
+  logIn(data: Signup){
+    console.log(data);
   }
 }
